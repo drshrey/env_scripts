@@ -1,5 +1,12 @@
 # Exec into pod with given name e.g. codeamp-circuit-circuit -> circuit is the short name
 
+if [ $# -eq 0 ]
+then
+  echo "please input a pod name"
+  exit 1
+fi
+
+
 arr=($(kubectl get pods))
 for element in "${arr[@]}"
 do
